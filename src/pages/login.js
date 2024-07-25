@@ -1,39 +1,25 @@
+import React from "react";
+import LogIn from "../components/loginComp/loginComp";
+import Typography from "@mui/material/Typography";
+// import Container from "@mui/material/Container";
+import { Stack } from "@mui/material";
 
-import React from 'react'
-import LogIn from '../components/loginComp/loginComp';
-import styles from "../components/loginComp/loginComp.module.css"
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
 
 function Login() {
-  return (
-  <div className={styles.main}>
-    <div>
-    <Container component="main" maxWidth="sm">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          
-          <Typography component="h1" variant="h1">
-           TECHSAVVY
-          </Typography>
-          
-        </Box>
-       
-      </Container>
-    </div>
-  <LogIn/>
-  </div>
-   
-  )
+	return (
+		<Stack
+			sx={{
+				background: "linear-gradient(white,pink,rgba(0, 179, 255, 0.751))",
+				minHeight: "100vh",
+				minWidth: "100%",
+			}}
+		>
+			<Typography component="h1" variant="h2" textAlign="center">
+				TECHSAVVY
+			</Typography>
+			<LogIn />
+		</Stack>
+	);
 }
 
-export default Login
+export default Login;

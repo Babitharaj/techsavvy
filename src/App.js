@@ -8,11 +8,8 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        
-        main: '#2030B6',
-        
+        main: '#5932ea',
       },
-      
     },
   });
 

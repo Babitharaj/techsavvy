@@ -4,11 +4,13 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
+// import Link from "@mui/material/Link";
+// import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import DraftsIcon from "@mui/icons-material/Drafts";
+import HttpsIcon from '@mui/icons-material/Https';
 import Typography from "@mui/material/Typography";
+import { InputAdornment } from "@mui/material";
 
 export default function LogIn() {
 	const handleSubmit = (event) => {
@@ -22,28 +24,25 @@ export default function LogIn() {
 
 	return (
 		<Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+			sx={{
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+			}}
+		>
 			<Box
 				sx={{
 					marginTop: 8,
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
-          background: '#fff',
-          maxWidth: '700px',
-          padding: '100px',
-          borderRadius: '30px',
-          boxShadow: 'rgba(0, 0, 0, 0.05) 0px 5px 15px'
+					background: "#fff",
+					maxWidth: "500px",
+					padding: "100px",
+					borderRadius: "30px",
+					boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 15px",
 				}}
 			>
-				{/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-					<LockOutlinedIcon />
-				</Avatar> */}
 				<Typography component="h1" variant="h4">
 					Welcome Back!
 				</Typography>
@@ -57,6 +56,13 @@ export default function LogIn() {
 						name="email"
 						autoComplete="email"
 						autoFocus
+						InputProps={{
+							startAdornment: (
+								<InputAdornment position="start">
+									<DraftsIcon />
+								</InputAdornment>
+							),
+						}}
 					/>
 					<TextField
 						margin="normal"
@@ -67,37 +73,33 @@ export default function LogIn() {
 						type="password"
 						id="password"
 						autoComplete="current-password"
+						InputProps={{
+							startAdornment: (
+								<InputAdornment position="start">
+									<HttpsIcon />
+								</InputAdornment>
+							),
+						}}
 					/>
 					<FormControlLabel
 						control={<Checkbox value="remember" color="primary" />}
 						label="Remember me"
+						sx={{ float: 'right', mr: 0 }}
 					/>
 					<Button
 						type="submit"
 						fullWidth
 						variant="contained"
-						sx={{ mt: 3,
-               mb: 2,
-               padding: '15px',
-               fontSize:'20px',
-               borderRadius:'10px',
-               backgroundColor:"primary"
-              }}
+						sx={{
+							mt: 1,
+							mb: 2,
+							padding: "7px 0",
+							fontSize: "20px",
+							backgroundColor: "primary",
+						}}
 					>
 						SIGN IN
 					</Button>
-					<Grid container>
-						<Grid item xs>
-							<Link href="#" variant="body2">
-								Forgot password?
-							</Link>
-						</Grid>
-						{/* <Grid item>
-							<Link href="#" variant="body2">
-								{"Don't have an account? Sign Up"}
-							</Link>
-						</Grid> */}
-					</Grid>
 				</Box>
 			</Box>
 		</Box>

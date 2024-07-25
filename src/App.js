@@ -5,20 +5,20 @@ import MainRouter from "./mainRouter";
 // import { createTheme } from '@mui/material/styles';
 
 function App() {
-  // const theme = createTheme({
-  //   palette: {
-  //     primary: {
+  const theme = createTheme({
+    palette: {
+      primary: {
         
-  //       main: '#2030B6',
+        main: '#2030B6',
         
-  //     },
+      },
       
-  //   },
-  // });
+    },
+  });
 
-  const defaultTheme = createTheme();
+  // const defaultTheme = createTheme();
 	return (
-		<ThemeProvider theme={defaultTheme}>
+		<ThemeProvider theme={theme}>
       <Container
         component="main"
         sx={{
